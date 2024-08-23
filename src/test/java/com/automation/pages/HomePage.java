@@ -8,7 +8,25 @@ public class HomePage extends BasePage{
     @FindBy(id = "page-title")
     WebElement homePageTitle;
 
+    @FindBy(xpath = "//div[@class='row']/div")
+    WebElement homePageCategories;
+
+    @FindBy(id = "savings-menu")
+    WebElement savingMenu;
+
+    @FindBy(id = "new-savings-menu-item")
+    WebElement newSavingMenu;
+
+
     public boolean isHomePageDisplayed() {
-        return homePageTitle.getText().equals("Dashboard");
+        return homePageTitle.getText().equals("Dashboard") && homePageCategories.isDisplayed();
+    }
+
+    public void clickOnSavingMenu() {
+        savingMenu.click();
+    }
+
+    public void selectSavingOption() {
+        newSavingMenu.click();
     }
 }
