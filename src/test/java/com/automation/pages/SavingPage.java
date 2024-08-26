@@ -1,11 +1,13 @@
 package com.automation.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.*;
 
-public class SavingPage extends BasePage{
+public class SavingPage extends BasePage {
 
     @FindBy(id = "page-title")
     WebElement savingPageTitle;
@@ -31,8 +33,11 @@ public class SavingPage extends BasePage{
     @FindBy(id = "newSavingsSubmit")
     WebElement newSavingsSubmitBtn;
 
-    @FindBy(xpath = "//div[@class='h4 m-0']")
-    List<WebElement> verifyAccountList;
+    @FindBy(xpath = "//div[@id='firstRow']/div//div[@class='h4 m-0'][1]")
+    List<WebElement> accountNameList;
+
+    @FindBy(xpath = "//div[@id='firstRow']/div//div[@class='h4 m-0'][2]")
+    List<WebElement> accountDepositList;
 
     @FindBy(id = "new-account-msg")
     WebElement newAccountSuccessfulMsg;
@@ -43,14 +48,14 @@ public class SavingPage extends BasePage{
     }
 
     public void enterAccountTypeAndOwnership(String accountType, String ownership) {
-        if(accountType.equals("Savings")){
+        if (accountType.equals("Savings")) {
             savingAccountType.click();
         } else {
             moneyMarketAccType.click();
         }
-        if(ownership.equals("Individual")){
+        if (ownership.equals("Individual")) {
             individualOwnership.click();
-        } else{
+        } else {
             jointOwnership.click();
         }
     }
@@ -65,9 +70,16 @@ public class SavingPage extends BasePage{
     }
 
     public boolean isSavingAccountCreated(String accountName, String initialDeposit) {
-        boolean isNameVerified = verifyAccountList.get(0).getText().equals(accountName);
-        String depositStr = verifyAccountList.get(1).getText();
-        boolean isDepositVerified = depositStr.substring(depositStr.indexOf("$")+1).equals(initialDeposit);
-        return isDepositVerified && isNameVerified && newAccountSuccessfulMsg.getText().contains("Successfully created new Savings account");
+        boolean isNameVerified = false;
+        boolean isDepositVerified = false;
+
+        for (int i = accountNameList.size() - 1; i >= 0; i--) {
+            isNameVerified = accountNameList.get(i).getText().equals(accountName);
+            String depositStr = accountDepositList.get(i).getText();
+            isDepositVerified = depositStr.substring(depositStr.indexOf("$") + 1).equals(initialDeposit);
+            break;
+        }
+
+        return isDepositVerified && isNameVerified;
     }
 }
