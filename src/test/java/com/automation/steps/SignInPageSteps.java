@@ -33,4 +33,8 @@ public class SignInPageSteps {
         signInPage.clickSignInBtn();
     }
 
+    @Then("verify signIn page is displayed")
+    public void verifySignInPageIsDisplayed() {
+        Assert.assertTrue(signInPage.isSignInPageDisplayed());
+    }
 }

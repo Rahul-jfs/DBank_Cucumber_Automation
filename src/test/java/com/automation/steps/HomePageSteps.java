@@ -25,4 +25,19 @@ public class HomePageSteps {
     public void selects_new_saving_option() {
         homePage.selectSavingOption();
     }
+
+    @When("user clicks on the profile picture")
+    public void userClicksOnTheProfilePicture() {
+        homePage.clickOnProfile();
+    }
+
+    @Then("verify profile related options are displayed")
+    public void verifyProfileRelatedOptionsAreDisplayed() {
+        Assert.assertTrue(homePage.isProfileRelatedOptionsDisplayed());
+    }
+
+    @When("user clicks on the logout button")
+    public void userClicksOnTheLogoutButton() {
+        homePage.clickLogoutBtn();
+    }
 }

@@ -37,4 +37,8 @@ public class SignInPage extends BasePage{
     public void clickSignInBtn() {
         signInBtn.click();
     }
+
+    public boolean isSignInPageDisplayed() {
+        return usernameInput.isDisplayed() && signInBtn.isDisplayed();
+    }
 }

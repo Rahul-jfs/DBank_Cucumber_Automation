@@ -17,6 +17,15 @@ public class HomePage extends BasePage{
     @FindBy(id = "new-savings-menu-item")
     WebElement newSavingMenu;
 
+    @FindBy(xpath = "//img[contains(@class,'user-avatar')]")
+    WebElement userProfile;
+
+    @FindBy(xpath = "//div[contains(@class,'user-area')]//a[contains(text(),'Logout')]")
+    WebElement logoutBtn;
+
+    @FindBy(xpath = "//div[contains(@class,'user-area')]//a[contains(text(),'My Profile')]")
+    WebElement myProfileBtn;
+
 
     public boolean isHomePageDisplayed() {
         return homePageTitle.getText().equals("Dashboard") && homePageCategories.isDisplayed();
@@ -28,5 +37,17 @@ public class HomePage extends BasePage{
 
     public void selectSavingOption() {
         newSavingMenu.click();
+    }
+
+    public void clickOnProfile() {
+        userProfile.click();
+    }
+
+    public boolean isProfileRelatedOptionsDisplayed() {
+        return logoutBtn.isDisplayed() && myProfileBtn.isDisplayed();
+    }
+
+    public void clickLogoutBtn() {
+        logoutBtn.click();
     }
 }
