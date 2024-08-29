@@ -1,22 +1,17 @@
 package com.automation.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-import java.util.*;
 
-public class SavingPage extends BasePage {
+public class CheckingPage extends BasePage {
 
-    @FindBy(id = "page-title")
-    WebElement savingPageTitle;
+    @FindBy(id = "Standard Checking")
+    WebElement standardChecking;
 
-    @FindBy(id = "Savings")
-    WebElement savingAccountType;
-
-    @FindBy(id = "Money Market")
-    WebElement moneyMarketAccType;
+    @FindBy(id = "Interest Checking")
+    WebElement interestChecking;
 
     @FindBy(id = "Individual")
     WebElement individualOwnership;
@@ -30,8 +25,8 @@ public class SavingPage extends BasePage {
     @FindBy(id = "openingBalance")
     WebElement initialDepositInput;
 
-    @FindBy(id = "newSavingsSubmit")
-    WebElement newSavingsSubmitBtn;
+    @FindBy(id = "newCheckingSubmit")
+    WebElement newCheckingSubmitBtn;
 
     @FindBy(xpath = "//div[@id='firstRow']/div//div[@class='h4 m-0'][1]")
     List<WebElement> accountNameList;
@@ -40,33 +35,28 @@ public class SavingPage extends BasePage {
     List<WebElement> accountDepositList;
 
 
-    public boolean isSavingPageDisplayed() {
-        return savingPageTitle.getText().equals("Create Savings") && newSavingsSubmitBtn.isDisplayed();
+    public boolean isCheckingPageDisplayed() {
+        return newCheckingSubmitBtn.isDisplayed() && standardChecking.isDisplayed();
     }
 
-    public void enterAccountTypeAndOwnership(String accountType, String ownership) {
-        if (accountType.equals("Savings")) {
-            savingAccountType.click();
+    public void enterAccountTypeAndAccountOwnership(String accType, String accOwnership) {
+        if (accType.equals("Standard")) {
+            standardChecking.click();
         } else {
-            moneyMarketAccType.click();
+            interestChecking.click();
         }
-        if (ownership.equals("Individual")) {
+        if (accOwnership.equals("Individual")) {
             individualOwnership.click();
         } else {
             jointOwnership.click();
         }
     }
 
-    public void enterAccountNameAndInitialDeposit(String accountName, String initialDeposit) {
-        accountNameInput.sendKeys(accountName);
-        initialDepositInput.sendKeys(initialDeposit);
+    public void clickCheckingSubmitButton() {
+        newCheckingSubmitBtn.click();
     }
 
-    public void clickSubmitBtn() {
-        newSavingsSubmitBtn.click();
-    }
-
-    public boolean isSavingAccountCreated(String accountName, String initialDeposit) {
+    public boolean isCheckingAccountCreated(String accountName, String initialDeposit) {
         boolean isNameVerified = false;
         boolean isDepositVerified = false;
 

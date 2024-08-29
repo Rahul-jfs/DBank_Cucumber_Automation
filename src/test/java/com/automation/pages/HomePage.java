@@ -17,6 +17,12 @@ public class HomePage extends BasePage{
     @FindBy(id = "new-savings-menu-item")
     WebElement newSavingMenu;
 
+    @FindBy(id = "checking-menu")
+    WebElement checkingMenu;
+
+    @FindBy(id = "new-checking-menu-item")
+    WebElement newCheckingMenu;
+
     @FindBy(xpath = "//img[contains(@class,'user-avatar')]")
     WebElement userProfile;
 
@@ -49,5 +55,13 @@ public class HomePage extends BasePage{
 
     public void clickLogoutBtn() {
         logoutBtn.click();
+    }
+
+    public void clickOnCheckingMenu() {
+        checkingMenu.click();
+    }
+
+    public void selectNewCheckingOption() {
+        newCheckingMenu.click();
     }
 }

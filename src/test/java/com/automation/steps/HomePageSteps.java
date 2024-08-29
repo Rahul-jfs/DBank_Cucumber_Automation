@@ -1,6 +1,7 @@
 package com.automation.steps;
 
 import com.automation.pages.HomePage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
@@ -39,5 +40,15 @@ public class HomePageSteps {
     @When("user clicks on the logout button")
     public void userClicksOnTheLogoutButton() {
         homePage.clickLogoutBtn();
+    }
+
+    @When("user clicks on checking menu")
+    public void userClicksOnCheckingMenu() {
+        homePage.clickOnCheckingMenu();
+    }
+
+    @And("selects new checking option")
+    public void selectsNewCheckingOption() {
+        homePage.selectNewCheckingOption();
     }
 }

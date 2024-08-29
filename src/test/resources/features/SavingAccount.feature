@@ -11,4 +11,4 @@ Feature: Saving account creation functionality
     When user enters saving account type "savingAccount.type" and account ownership "savingAccount.ownership"
     And enters account name "savingAccount.name" and initial deposit "savingInitial.deposit"
     And clicks on saving submit button
-    Then verify account is created of account name "savingAccount.name" and initial deposit "savingInitial.deposit"
+    Then verify saving account is created of account name "savingAccount.name" and initial deposit "savingInitial.deposit"

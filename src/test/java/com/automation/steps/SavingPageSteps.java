@@ -31,13 +31,7 @@ public class SavingPageSteps {
         savingPage.clickSubmitBtn();
     }
 
-    @Then("verify account is created")
-    public void verify_account_is_created() {
-
-    }
-
-
-    @Then("verify account is created of account name {string} and initial deposit {string}")
+    @Then("verify saving account is created of account name {string} and initial deposit {string}")
     public void verifyAccountIsCreatedOfAccountNameAndInitialDeposit(String accountName, String initialDeposit) {
         Assert.assertTrue(savingPage.isSavingAccountCreated(ConfigReader.getConfigValue(accountName), ConfigReader.getConfigValue(initialDeposit)));
     }
