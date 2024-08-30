@@ -32,6 +32,9 @@ public class HomePage extends BasePage{
     @FindBy(xpath = "//div[contains(@class,'user-area')]//a[contains(text(),'My Profile')]")
     WebElement myProfileBtn;
 
+    @FindBy(xpath = "//a[contains(text(),'Change Password')]")
+    WebElement changePasswordLink;
+
 
     public boolean isHomePageDisplayed() {
         return homePageTitle.getText().equals("Dashboard") && homePageCategories.isDisplayed();
@@ -63,5 +66,9 @@ public class HomePage extends BasePage{
 
     public void selectNewCheckingOption() {
         newCheckingMenu.click();
+    }
+
+    public void clickOnChangePasswordLink() {
+        changePasswordLink.click();
     }
 }

@@ -51,4 +51,9 @@ public class HomePageSteps {
     public void selectsNewCheckingOption() {
         homePage.selectNewCheckingOption();
     }
+
+    @And("clicks on change password")
+    public void clicksOnChangePassword() {
+        homePage.clickOnChangePasswordLink();
+    }
 }
