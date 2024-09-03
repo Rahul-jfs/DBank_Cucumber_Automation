@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+    
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+              <th>Number</th>
+            <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>DBank Automation</td>
+              <td>1</td>
+            <td>03 Sep 2024, 20:05</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+      </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+          <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+      </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Duration</th>
+            <th>Average</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+                      <tr>
+              <td class="location">com.automation.steps.CheckingPageSteps.clicksOnCheckingSubmitButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.CheckingPageSteps.userEntersCheckingAccountTypeAndAccountOwnership(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.CheckingPageSteps.verifyCheckingAccountIsCreatedOfAccountNameAndInitialDeposit(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.CheckingPageSteps.verifyCreateCheckingPageIsDisplayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomePageSteps.selectsNewCheckingOption()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomePageSteps.selects_new_saving_option()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomePageSteps.userClicksOnCheckingMenu()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomePageSteps.userClicksOnTheLogoutButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomePageSteps.userClicksOnTheProfilePicture()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomePageSteps.user_clicks_on_saving_menu()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomePageSteps.verifyProfileRelatedOptionsAreDisplayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomePageSteps.verifyUserSuccessfullySignedIn()</td>
+              <td>5</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.Hooks.cleanUp()</td>
+              <td>6</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.Hooks.setUp()</td>
+              <td>6</td>
+              <td class="duration" data-value="999300">000ms</td>
+              <td class="duration" data-value="166550">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SavingPageSteps.clicks_on_saving_submit_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SavingPageSteps.enters_account_name_and_initial_deposit(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SavingPageSteps.user_enters_saving_account_type_and_account_ownership(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SavingPageSteps.verifyAccountIsCreatedOfAccountNameAndInitialDeposit(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SavingPageSteps.verify_create_saving_page_is_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SignInPageSteps.clicksOnSignInButton()</td>
+              <td>5</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SignInPageSteps.userEntersUsernameAndPassword(java.lang.String,java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SignInPageSteps.user_clicks_on_sign_up_link()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SignInPageSteps.verifySignInPageIsDisplayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SignInPageSteps.verify_user_is_registered_successfully()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SignUpPageSteps.clicks_on_next_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SignUpPageSteps.selects_terms_and_policy()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SignUpPageSteps.user_clicks_on_register_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SignUpPageSteps.user_enters_other_details()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SignUpPageSteps.user_enters_sign_up_details()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SignUpPageSteps.user_opens_website()</td>
+              <td>6</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SignUpPageSteps.verify_next_sign_up_page_is_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SignUpPageSteps.verify_user_sign_up_page_is_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                  </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>32</td>
+            <td>60</td>
+            <td class="duration">000ms</td>
+            <td class="duration">000ms</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
